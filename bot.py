@@ -13,11 +13,11 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.author == client.user:
+    if message.author.bot:
         return
 
     cont = message.content.lower()
-    if 'where' in cont and ('rapid' in cont or 'antigen' in cont) and 'test' in cont:
+    if ('rapid' in cont or 'antigen' in cont) and 'test' in cont:
         await message.reply(('The rapid antigen tests are in Kristen\'s office'
                              ' in the mailbox lounge! The door should be unloc'
                              'ked, so you can get them whenever you need them.'))
